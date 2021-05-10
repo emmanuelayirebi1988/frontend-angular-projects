@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ComposersList">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>3 Famous Composers</title>
+  </head>
+
+  <body ng-controller="ComposerController">
+    <div id="header"><span>3</span>Famous Composers</div>
+
+    <div class="container">
+      <div id="composer__bach">
+        <img
+          ng-click="select = 'Bach'"
+          src="assets/bach.jfif"
+          alt="Image of Bach"
+          id="bach"
+        /><br />
+        <h2>Bach</h2>
+      </div>
+      <div id="composer__beethoven">
+        <img
+          ng-click="select = 'Beethoven'"
+          src="assets/beethoven.png"
+          alt="Image of Beethoven"
+          id="beethoven"
+        /><br />
+        <h2>Beethoven</h2>
+      </div>
+      <div id="composer__mazart">
+        <img
+          ng-click="select='Mozart'"
+          src="assets/mozart.jfif"
+          alt="Image of Mozart"
+          id="mozart"
+        /><br />
+        <h2>Mozart</h2>
+      </div>
+    </div>
+
+    <div class="main">Top <span>5</span> Pieces of Music</div>
+    <table class="bottom-table">
+      <tr ng-repeat="p in pieces" ng-if="p.composer == select">
+        <td><img src="{{p.pic}}" alt="Picture of composers" /></td>
+        <td>{{p.composer}}</td>
+        <td>{{p.title}}</td>
+      </tr>
+    </table>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"
+      integrity="sha512-7oYXeK0OxTFxndh0erL8FsjGvrl2VMDor6fVqzlLGfwOQQqTbYsGPv4ZZ15QHfSk80doyaM0ZJdvkyDcVO7KFA=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
